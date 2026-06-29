@@ -86,6 +86,19 @@ export interface ContractAddresses {
   dividend: string;
 }
 
+export type NotificationType = "contribution" | "loan" | "vote" | "distribution";
+
+export interface Notification {
+  id: string;
+  type: NotificationType;
+  recipient: string;
+  message: string;
+  read: boolean;
+  createdAt: string;
+  txHash?: string;
+  groupId?: string;
+}
+
 export interface DashboardStats {
   totalGroups: number;
   totalMembers: number;
